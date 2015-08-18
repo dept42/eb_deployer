@@ -29,8 +29,7 @@ module EbDeployer
         env_id = convert_env_name_to_id(app_name, [env_name]).first
         @client.update_environment(:environment_id => env_id,
                                    :version_label => version,
-                                   :option_settings => settings,
-                                   :tier => environment_tier(tier))
+                                   :option_settings => settings)
       end
 
       def environment_exists?(app_name, env_name)
